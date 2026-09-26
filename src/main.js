@@ -289,12 +289,14 @@ function initModal() {
   // Close when clicking the close button
   closeBtn.addEventListener('click', () => {
     modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
   });
 
   // Close when clicking outside the modal content
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) {
       modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
     }
   });
 
@@ -335,6 +337,7 @@ window.openArtifactModal = function(id, isMap = false) {
   document.getElementById('modal-image').src = details.image;
   
   document.getElementById('artifact-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
 };
 
 // --- MAP LOGIC ---
