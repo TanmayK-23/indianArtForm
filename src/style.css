@@ -695,3 +695,25 @@ nav {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+
+/* Stroke Text Component */
+.stroke-text {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.stroke-text--hover {
+  cursor: pointer;
+}
+
+.stroke-text__svg {
+  display: block;
+  width: 100%;
+  height: var(--stroke-text-height, 160px);
+}
+
+.stroke-text__stroke,
+.stroke-text__fill {
+  user-select: none;
+}

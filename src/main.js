@@ -1,6 +1,25 @@
 import './style.css';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { initStrokeText } from './StrokeText.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heroTitle = document.getElementById('hero-title');
+  if (heroTitle) {
+    initStrokeText(heroTitle, {
+      text: 'Indian Art History',
+      strokeColor: '#ffffff', // White
+      fillColor: '#ffffff',
+      strokeWidth: 1.5,
+      drawDuration: 2.0,
+      fillDelay: 0.5,
+      fontSize: window.innerWidth > 768 ? 90 : 50,
+      fontWeight: 800,
+      trigger: 'mount',
+      fillMode: 'wipe'
+    });
+  }
+});
 
 // --- DATA ---
 
