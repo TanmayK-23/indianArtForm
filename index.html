@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Art History</title>
+  <meta name="description"
+    content="An interactive journey through Indian art history, featuring timelines, maps, and cultural fusions." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+
+
+  <!-- Header & Navigation -->
+  <header class="glass-header sticky-header">
+    <div class="header-content">
+      <h1>Chronicles of <span class="highlight">India</span></h1>
+      <nav>
+        <a href="#hero" class="nav-btn">Home</a>
+        <a href="#timeline" class="nav-btn">Timeline</a>
+        <a href="#map" class="nav-btn">Art Map</a>
+        <a href="#fusion" class="nav-btn">Fusion Art</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- App Container -->
+  <div id="app" class="scroll-container">
+
+    <!-- SECTION: HERO LANDING PAGE -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Indian Art History</h1>
+        <p class="hero-subtitle">Explore the evolution of Indian art from ancient civilizations to regional folk
+          traditions.</p>
+      </div>
+      <div class="scroll-indicator">
+        Scroll to explore &darr;
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-container">
+
+      <!-- SECTION: TIMELINE (Custom Vertical) -->
+      <section id="timeline" class="section">
+        <div class="section-header">
+          <h2>Art Timeline</h2>
+          <p>Trace the masterworks across the centuries.</p>
+        </div>
+        <div id="custom-timeline" class="vertical-timeline">
+          <!-- JS will inject timeline items here -->
+        </div>
+      </section>
+
+      <!-- SECTION: MAP -->
+      <section id="map" class="section">
+        <div class="section-header">
+          <h2>Interactive Art Map</h2>
+          <p>Discover the geographic origins of distinct art movements and styles across India.</p>
+        </div>
+        <div class="map-wrapper glass-panel">
+          <div id="leaflet-map"></div>
+        </div>
+      </section>
+
+      <!-- SECTION: FUSION ART -->
+      <section id="fusion" class="section">
+        <div class="section-header">
+          <h2>Regional Painting Fusions</h2>
+          <p>Exploring the creative synthesis between diverse Indian regional styles.</p>
+        </div>
+
+        <!-- Fusion 1: Warli x Kalamkari -->
+        <div class="fusion-content" style="margin-bottom: 4rem;">
+          <div class="fusion-image-container glass-panel">
+            <img src="/fusion_art.jpg" alt="Digital Fusion of Warli and Kalamkari Art" class="fusion-img">
+          </div>
+          <div class="fusion-description glass-panel">
+            <h3>Warli × Kalamkari</h3>
+            <p><strong>Warli Art:</strong> Minimalist geometric figures depicting daily life on earthy red mud backgrounds.</p>
+            <p><strong>Kalamkari:</strong> Intricate, sprawling floral/vine motifs framing mythological narratives using natural dyes.</p>
+            <div class="concept-features">
+              <div class="feature">
+                <h4>Composition</h4>
+                <p>Geometric Warli figures at the center performing the Tarpa dance, beautifully framed by rich, flowing Kalamkari borders.</p>
+              </div>
+              <div class="feature">
+                <h4>Color Palette</h4>
+                <p>Earthy reds, vibrant indigos, and mustard yellows, harmonizing the stark contrast of Warli with the rich hues of Kalamkari.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fusion 2: Rajput x Madhubani -->
+        <div class="fusion-content" style="margin-bottom: 4rem;">
+          <div class="fusion-description glass-panel">
+            <h3>Rajput Miniature × Madhubani</h3>
+            <p><strong>Rajput Miniature:</strong> Courtly, highly detailed miniature paintings characterized by elegant profiles and rich ornamentation.</p>
+            <p><strong>Madhubani:</strong> Vibrant folk art with bold double-lined outlines, geometric patterns, and zero negative space.</p>
+            <div class="concept-features">
+              <div class="feature">
+                <h4>Composition</h4>
+                <p>Detailed Rajput royalty seated in the center, surrounded by the vibrant, eye-catching geometric borders of Madhubani.</p>
+              </div>
+              <div class="feature">
+                <h4>Color Palette</h4>
+                <p>The delicate pastels and gold foils of Rajput courts clashing beautifully against the loud primary colors of Mithila folk art.</p>
+              </div>
+            </div>
+          </div>
+          <div class="fusion-image-container glass-panel">
+            <img src="/fusion_2.jpg" alt="Digital Fusion of Rajput and Madhubani Art" class="fusion-img">
+          </div>
+        </div>
+
+        <!-- Fusion 3: Pattachitra x Kerala Mural -->
+        <div class="fusion-content">
+          <div class="fusion-image-container glass-panel">
+            <img src="/fusion_3.jpg" alt="Digital Fusion of Pattachitra and Kerala Mural" class="fusion-img">
+          </div>
+          <div class="fusion-description glass-panel">
+            <h3>Odisha Pattachitra × Kerala Mural</h3>
+            <p><strong>Kerala Mural:</strong> Highly stylized, voluminous figures painted in vibrant orange-reds and deep greens (Pancha-varna).</p>
+            <p><strong>Pattachitra:</strong> Distinct, fine-line scroll painting characterized by intricate floral borders and white dotted highlights.</p>
+            <div class="concept-features">
+              <div class="feature">
+                <h4>Composition</h4>
+                <p>Voluminous, dynamic figures drawn in the Kerala style, but adorned with the micro-detailing and scroll borders of Odisha.</p>
+              </div>
+              <div class="feature">
+                <h4>Color Palette</h4>
+                <p>The deep greens and rich ochres of the South Coast meet the stark white accents and intricate line-work of the East Coast.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Artifact Modal -->
+  <div id="artifact-modal" class="modal-overlay">
+    <div class="modal-content glass-panel">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img id="modal-image" src="" alt="Artifact">
+        </div>
+        <div class="modal-text">
+          <h2 id="modal-title">Artifact Title</h2>
+          <p class="modal-period" id="modal-period">Period</p>
+          <div class="modal-details">
+            <h3>Artifact Description</h3>
+            <p id="modal-desc">...</p>
+            <h3>Historical Context & Significance</h3>
+            <p id="modal-context">...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
